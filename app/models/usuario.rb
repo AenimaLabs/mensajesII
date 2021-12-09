@@ -4,4 +4,8 @@ class Usuario < ApplicationRecord
     has_many :mensajes, dependent: :destroy
     has_many :blogs, :through=> :propietarios, dependent: :destroy
 
+    validates :nombre, :apellido, :email, presence: true
+    
+    
+
 end

@@ -4,4 +4,8 @@ class Blog < ApplicationRecord
     
     has_many :usuarios, :through => :propietarios, dependent: :destroy
 
+    validates :nombre, :descripcion, presence: true
+    
+    
+
 end

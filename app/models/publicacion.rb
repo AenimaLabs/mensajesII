@@ -17,7 +17,7 @@ class Publicacion < ApplicationRecord
       puts "Publicación creada con éxito"
   end
   
-  def after_update
+  def actualizacion_exitosa
       puts "Publicación actualizada con éxito"
   end
   

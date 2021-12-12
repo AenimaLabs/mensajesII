@@ -47,3 +47,19 @@ end
 rand(10).times do |i|
     Publicacion.create(usuario: Usuario.find(3), blog: Blog.all.sample, titulo: "Titulo n #{i+1}", contenido: "Contenido n #{i+1}")
 end
+
+2.times do |i|
+    Mensaje.create(usuario: Usuario.find(3), publicacion: Publicacion.first, mensaje: "Mensaje n autor: #{i+1}", autor: "Autor n #{i+1}")
+end
+
+3.times do |i|
+    Mensaje.create(usuario: Usuario.find(3), publicacion: Publicacion.second, mensaje: "Mensaje n autor: #{i+1}", autor: "Autor n #{i+3}")
+end
+
+3.times do |i|
+    Mensaje.create(usuario: Usuario.find(4), publicacion: Publicacion.last, mensaje: "Mensaje n autor: #{i+1}", autor: "Autor n #{i+3}")  
+end
+
+#Publicacion.where("id=?",2).update(usuario: Usuario.last)
+
+Publicacion.find(2).update(usuario: Usuario.last)
